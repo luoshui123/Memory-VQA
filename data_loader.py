@@ -417,7 +417,7 @@ class VideoDataset_VQA_Swin_features(data.Dataset):
                 score.append(dataInfo['scores'][0][i])
             self.video_names = video_names
             self.score = score
-        elif database_name == 'Live_VQC':
+        elif database_name == 'other':
             infos = filename_path
             n_video = len(infos)
             video_names = []
@@ -446,7 +446,7 @@ class VideoDataset_VQA_Swin_features(data.Dataset):
         elif self.database_name == 'youtube_ugc':
             video_name = self.video_names[idx]
             video_name_str = video_name[:-4]
-        elif self.database_name == 'Live_VQC':
+        elif self.database_name == 'other':
             video_name = self.video_names[idx]
             video_name_str = video_name[:-4]
 
