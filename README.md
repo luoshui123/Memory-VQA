@@ -28,6 +28,9 @@ python -u extract_frame_LSVQ.py
 ```shell
    python -u extract_SlowFast_features_LSVQ.py 
 ```
+```shell
+   python -u extract_SlowFast_features_VQA.py --database youtube_ugc  --model_name SlowFast  --resize 224  --feature_save_folder youtube_ugc_SlowFast_feature/
+```
 3. Memory Storage, Memory Retrieval and Memory Reconstruction
 ```shell
  python -u trainSwTransformer.py
