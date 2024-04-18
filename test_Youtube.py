@@ -49,12 +49,12 @@ def main(args):
 
     for i in range(10):
         print(i)
-        train_infos, val_infos = train_test_split(datainfo, 0.8, (i+1)*90)
+        train_infos, val_infos = train_test_split(datainfo, 0, (i+1)*90)
 
         transformations_test = transforms.Compose(
             [transforms.Resize((512, 480)), transforms.ToTensor(),
              transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])])
-        testset = VideoDataset_VQA_Swin_features(videos_dir, data_dir_3D, val_infos, transformations_test, 'Live_VQC',
+        testset = VideoDataset_VQA_Swin_features(videos_dir, data_dir_3D, val_infos, transformations_test, 'other',
                                                  'SlowFast', 'val')
         test_loader = torch.utils.data.DataLoader(testset, batch_size=1, shuffle=False, num_workers=args.num_workers)
 
